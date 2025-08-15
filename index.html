@@ -1,48 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Story-World</title>
-  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>⚔️ STORY WORLD ⚔️</h1>
-
-    <div class="panel">
-      <h2>🛠 Create New World</h2>
-      <input type="text" id="worldName" placeholder="Enter world name" />
-      <button id="createWorldBtn">Create</button>
-    </div>
-
-    <div class="panel">
-      <h2>🌍 Registered Worlds</h2>
-      <div id="worldList"></div>
-    </div>
-  </div>
-
-  <script>
-    async function fetchWorlds() {
-      const res = await fetch("https://ai-storyworld.onrender.com/worlds");
-      const worlds = await res.json();
-      document.getElementById("worldList").innerHTML = worlds
-        .map(w => `<div class="world-item">${w.name}</div>`)
-        .join("");
-    }
-
-    document.getElementById("createWorldBtn").addEventListener("click", async () => {
-      const name = document.getElementById("worldName").value || "Unnamed World";
-      await fetch("https://ai-storyworld.onrender.com/worlds", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name }),
-      });
-      fetchWorlds();
-    });
-
-    fetchWorlds();
-  </script>
-</body>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>AI Storyworld Simulator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- RPG-like Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
