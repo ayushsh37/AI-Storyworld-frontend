@@ -64,3 +64,8 @@ button:hover {
   border-radius: 5px;
   border: 1px solid gold;
 }
+
+.error {
+  color: #ffcccc;
+  font-weight: bold;
+}
