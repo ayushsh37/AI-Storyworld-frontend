@@ -1,141 +1,66 @@
-/* Global RPG Theme */
-:root {
-  --gold: #ffd700;
-  --gold-dark: #a67c00;
-  --wood: #7b4b1d;
-  --wood-dark: #5e3613;
-  --parchment: #fdf5e6;
-  --ink: #2b1e12;
-  --panel-bg: rgba(0, 0, 0, 0.6);
-}
-
-* { box-sizing: border-box; }
-html, body, #root { height: 100%; }
-
 body {
-  margin: 0;
   font-family: 'MedievalSharp', cursive;
-  color: #f0e0bb;
-  background: radial-gradient(1200px 800px at 10% 10%, #2d1b4e, #0d0d0d 70%);
-  background-attachment: fixed;
-}
-
-.app-shell {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 24px;
-  gap: 20px;
-}
-
-/* Title */
-.title {
-  color: var(--gold);
-  text-shadow: 2px 2px #000;
-  font-size: 2.2rem;
+  background: linear-gradient(120deg, #3a1c71, #d76d77, #ffaf7b);
+  color: #fff;
   margin: 0;
+  padding: 0;
 }
 
-/* Panels */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+}
+
 .panel {
-  width: min(980px, 92vw);
-  background: var(--panel-bg);
-  border: 3px solid var(--gold);
-  border-radius: 12px;
-  padding: 18px;
-  box-shadow: 0 0 24px rgba(255, 215, 0, 0.2);
-}
-
-.panel h2 {
-  margin: 0 0 12px 0;
-  color: var(--gold);
-  text-shadow: 1px 1px #000;
-  font-size: 1.3rem;
-}
-
-/* Inputs + Buttons */
-.input-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 10px;
-}
-
-.input, .select {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 2px solid var(--gold);
-  background: rgba(255,255,255,0.08);
-  color: #ffeec0;
-}
-
-.btn {
-  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  margin: 20px 0;
   border-radius: 10px;
-  border: 2px solid var(--gold-dark);
-  background: linear-gradient(to bottom, var(--gold), var(--gold-dark));
-  color: #111;
+  border: 2px solid gold;
+}
+
+h2 {
+  margin-top: 0;
+  color: gold;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  margin-top: 10px;
+  width: 60%;
+}
+
+button {
+  background-color: gold;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  transform: translateY(-1px) scale(1.02);
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+button:hover {
+  background-color: orange;
 }
 
-.btn.secondary {
-  background: linear-gradient(to bottom, #4b2e19, #2e1b0e);
-  color: #ffe4a0;
-  border-color: #9b6b35;
-}
-
-/* Two columns panel layout on wide screens */
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-@media (max-width: 900px) {
-  .grid-2 { grid-template-columns: 1fr; }
-}
-
-/* World + Events boxes */
-.box {
-  background: rgba(255,255,255,0.06);
-  border: 2px solid #9b6b35;
-  border-radius: 10px;
-  padding: 12px;
-  min-height: 120px;
-}
-
-.scroll {
-  max-height: 360px;
-  overflow: auto;
-}
-
-/* List items */
-.item {
-  border: 1px solid #9b6b35;
-  background: rgba(255, 215, 0, 0.08);
+.world-item {
+  background: rgba(255, 215, 0, 0.2);
+  margin: 5px;
   padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 8px;
+  border-radius: 5px;
+  border: 1px solid gold;
 }
-
-/* Small text */
-.muted { opacity: 0.85; font-size: 0.95rem; }
-
-/* Footer */
-.footer {
-  color: #ccb07a;
-  opacity: 0.8;
-  font-size: 0.9rem;
-}
-
-/* Scrollbar theming */
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: rgba(0,0,0,0.25); }
-::-webkit-scrollbar-thumb { background: var(--wood); border-radius: 6px; }
-::-webkit-scrollbar-thumb:hover { background: var(--wood-dark); }
