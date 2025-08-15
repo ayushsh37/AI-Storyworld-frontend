@@ -1,12 +1,37 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>AI Storyworld Simulator</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>AI Storyworld Simulator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Google Fonts for RPG vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  
+  <!-- Your RPG-style CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🏰 AI Storyworld Simulator</h1>
+    
+    <!-- Create World Panel -->
+    <div class="panel">
+      <h2>Create a New World</h2>
+      <input type="text" id="worldName" placeholder="Enter world name..." />
+      <button id="createWorldBtn">Create</button>
+      <div id="createError" class="error"></div>
+    </div>
+
+    <!-- Available Worlds Panel -->
+    <div class="panel">
+      <h2>🌍 Available Worlds</h2>
+      <div id="worldList"></div>
+      <div id="fetchError" class="error"></div>
+    </div>
+  </div>
+
+  <!-- Your JS entry point -->
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 </html>
